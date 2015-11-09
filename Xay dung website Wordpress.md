@@ -33,6 +33,8 @@ Bạn cùng Ubuntu server, bạn có thể chạy những lệnh sau ( cũng áp
 >**cd /var/www/**
 <br>**sudo wget http://wordpress.org/latest.tar.gz**
 
+![](http://imgur.com/zxgjzZN.png)
+
 Đánh password và đợi. Chú ý user của bạn phải có quyền của root ( hoặc root user) để được ghi vào thư mục **/var/www**. Tiếp theo giải nén file mới tải về:
 
 >**sudo tar xzvf latest.tar.gz**
