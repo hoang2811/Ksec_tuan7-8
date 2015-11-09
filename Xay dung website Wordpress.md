@@ -3,6 +3,8 @@
 Login vào mysql với lệnh:
 >**mysql -u root -p**
 
+![](http://imgur.com/MDNffG8.png)
+
 Điền password vào để đăng nhập vào mysql. Sau đó đánh dòng lệnh sau để tạo cơ sở dữ liệu cho Wordpress
 
 >**CREATE DATABASE wordpress;**
