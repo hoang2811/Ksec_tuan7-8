@@ -69,6 +69,7 @@ Copy đoạn code sau và paste vào file đó. Lệnh paste file bạn dùng **
 
 **Chú ý** thay user, pass thành của bạn ( lần đầu sử dụng, bạn có thể làm theo mặc định là hay nhất). Sau đó save và thoát. 
 
+![](http://imgur.com/iewrrTq.png)
 
 ####Bước 4: Phân quyền, tạo thư mục chứa ảnh, tài liệu upload
 
@@ -95,45 +96,51 @@ http://server_domain_name_or_IP/wordpress
 
 Theo mặc định, nếu bạn vào địa chỉ ip hoặc domain máy, bạn sẽ đến trang mặc định của apache2. Trên Ubuntu desktop, bạn chỉ việc vào http://localhost/wordpress là xong:
 
-[​IMG]
+![](http://imgur.com/OYRAr5B.png)
 
 Điền các thông số cần thiết nhé:
 
-[​IMG]
+![](http://imgur.com/WyEijXV.png)
 
 Vậy là xong, bạn sẽ được đăng nhập vào giao diện admin của Wordpress tại địa chỉ:
 http://localhost/wordpress/wp-admin ( Ubuntu desktop)
 http://server_domain_name_or_IP/wordpress/wp-admin ( Ubuntu server- truy cập từ máy khác)
 
-[​IMG]
+![](http://imgur.com/A5HA63q.png)
 
-Xem nào. Đầu tiên bạn có thể thử tạo 1 bài viết trong mục POSTS. Sau đó ra trang chủ wordpress xem thử nhé.
+Xem nào. Đầu tiên bạn có thể thử tạo 1 bài viết trong mục POSTS. 
 
-[​IMG]
+![](http://imgur.com/xlLyxlf.png)
+
+Sau đó ra trang chủ wordpress xem thử nhé.
+
+![](http://imgur.com/gGNOApv.png)
 
 
 Nếu bạn muốn tạo tên miền riêng cho wordpress, bạn làm như sau:
 
-sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/wordpress.conf
+**`sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/wordpress.conf`**
 
 Sau đó bạn edit file mới tạo ra:
-sudo nano /etc/apache2/sites-available/wordpress.conf
+
+**`sudo nano /etc/apache2/sites-available/wordpress.conf`**
 
 Trong file này, chú ý dòng sau:
 
-<VirtualHost *:80>
-ServerAdmin webmaster@localhost
-DocumentRoot /var/www/wordpress
-ServerName dreamlib.vn ( thay bằng tên miền của bạn- đã trỏ đến ip máy chủ này)
-<Directory /var/www/wordpress/>
-AllowOverride All
-</Directory>
-. . .
+              <VirtualHost *:80>
+              ServerAdmin webmaster@localhost
+              DocumentRoot /var/www/wordpress
+              ServerName dreamlib.vn ( thay bằng tên miền của bạn- đã trỏ đến ip máy chủ này)
+              <Directory /var/www/wordpress/>
+              AllowOverride All
+              </Directory>
+              . . .
+
 Sau đó save file này lại, tiếp theo đánh các dòng lệnh sau:
 
-sudo a2enmod rewrite
-sudo a2ensite wordpress.conf
-sudo service apache2 restart
+**`sudo a2enmod rewrite`**<br>
+**`sudo a2ensite wordpress.conf`**<br>
+**`sudo service apache2 restart`**<br>
 
 Vậy giờ bạn có thể truy cập vào wordpress bằng tên miền, thay vì :
 http://localhost/wordpress/wp-admin ( Ubuntu desktop)
